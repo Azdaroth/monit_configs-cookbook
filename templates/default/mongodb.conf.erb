@@ -1,0 +1,4 @@
+check process mongodb with pidfile /home/data/mongodb/mongod.lock
+  start program = "/etc/init.d/mongod start"
+  stop  program = "/etc/init.d/mongod stop"
+  if 5 restarts within 5 cycles then timeout
