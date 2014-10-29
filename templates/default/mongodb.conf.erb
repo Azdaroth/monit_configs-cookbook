@@ -1,4 +1,5 @@
 check process mongodb with pidfile <%= node["mongodb"]["config"]["dbpath"] %>/mongod.lock  
   start program = "/etc/init.d/mongod start"
   stop  program = "/etc/init.d/mongod stop"
+  if failed host 127.0.0.1 port 27017 then restart
   if 5 restarts within 5 cycles then timeout
